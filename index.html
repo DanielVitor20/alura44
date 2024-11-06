@@ -1,0 +1,142 @@
+<html><head><base href="." />
+<style>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 200px;
+    height: 280px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.card-front {
+    background: linear-gradient(45deg, #e63946 0%, #f1516e 100%);
+    color: white;
+    font-size: 16px;
+}
+
+.card-back {
+    background: linear-gradient(45deg, #2a9d8f 0%, #264653 100%);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 14px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.movie-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>🎬 Quiz de Cinema 🎬</h1>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <p>Qual filme ganhou o Oscar de Melhor Filme em 2024?</p>
+            </div>
+            <div class="card-back">
+                <p>"Oppenheimer" dirigido por Christopher Nolan</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <p>Quem interpretou o Coringa no filme "Batman: O Cavaleiro das Trevas" (2008)?</p>
+            </div>
+            <div class="card-back">
+                <p>Heath Ledger, que ganhou um Oscar póstumo por sua atuação</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <p>Qual é o filme mais lucrativo de todos os tempos?</p>
+            </div>
+            <div class="card-back">
+                <p>"Avatar" (2009) de James Cameron, com mais de $2.9 bilhões arrecadados</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <p>Qual atriz ganhou mais Oscars na história?</p>
+            </div>
+            <div class="card-back">
+                <p>Katharine Hepburn, com 4 Oscars de Melhor Atriz</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <p>Qual foi o primeiro filme totalmente animado por computador?</p>
+            </div>
+            <div class="card-back">
+                <p>"Toy Story" (1995) da Pixar</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
+</script>
+</body>
+</html>
